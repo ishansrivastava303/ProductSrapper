@@ -1,56 +1,3 @@
-/*package main
-
-import(
-   "github.com/gocolly/colly"
-   "encoding/json"
-   //"log"
-   "os"
-   "fmt"
-    //"strings"
-)
-
-var name string
-type Fact struct{
-    Name string `json:"name"`
-    ImageURL string `json:"imageURL"`
-    Description string `json:"description"`
-    Price int `json:"price"`
-    TotalReviews int `json:"totalReviews"`
-}
-
-func main(){
-    allFacts:=make([]Fact,0)
-    var imageurl,desc string
-    var price,reviews int
-    
-    collector:=colly.NewCollector()
-    collector.OnHTML("#imgTagWrapperId",func(element *colly.HTMLElement){
-        //name=strings.Trim(element.Text," ")
-        fmt.Println("https"+element.ChildText("img"))
-        
-    })
-    fmt.Println(name)
-    imageurl="img"
-    desc="desc"
-    price=12
-    reviews=10
-    fact:=Fact{
-        Name:name,
-        ImageURL:imageurl,
-        Description:desc,
-        Price:price,
-        TotalReviews:reviews,
-    }
-    allFacts=append(allFacts,fact)
-    collector.OnRequest(func(request *colly.Request){
-        fmt.Println("Visiting",request.URL.String())
-    })
-    collector.Visit("https://www.amazon.com/PlayStation-4-Pro-1TB-Console/dp/B01LOP8EZC/")
-    
-    enc:=json.NewEncoder(os.Stdout)
-    enc.SetIndent(""," ")
-    enc.Encode(allFacts)
-}*/
 package main
 
 import (
@@ -182,19 +129,6 @@ func main() {
     
 }
 
-/*func writeJSON(data []Product){
-    file,_:=json.MarshalIndent(data,""," ")
-    //log.Println("Hello")
-    f, err := os.OpenFile("AmazonProductDetails.json", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-    if err != nil {
-        log.Println(err)
-    }
-    defer f.Close()
-    //log.Println(file)
-    //_=ioutil.WriteFile("AmazonProductDetails.json",file,0777)
-    if _, err := f.Write(file); err != nil {
-        log.Println(err)
-    }
-}*/
+
     
 
