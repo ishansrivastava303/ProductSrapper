@@ -12,20 +12,6 @@ import (
     //"github.com/gocolly/colly"
 )
 
-type Fact struct{
-    Name string `json:"name"`
-    ImageURL string `json:"imageURL"`
-    Description []string `json:"description"`
-    Price []string `json:"price"`
-    TotalReviews string `json:"totalReviews"`
-}
-
-
-type Product struct{
-    Url string `json:"Url"`
-    ProductDetails Fact `json:"ProductDetails"` 
-}
-
 func WriteJSON(data string){
     /*file,err:=json.MarshalIndent(data,""," ")
     
